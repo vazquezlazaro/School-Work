@@ -1,0 +1,54 @@
+<html>
+<head>
+	<title> Weekly Recipes </title>
+	<link rel="stylesheet" type="text/css" href="weeklyCalendarRepstyles.css">
+	
+</head>
+<body>
+
+<div class="heading">
+  <h2>Weekly Recipes</h2>
+</div>
+
+<form id="recipe-form">
+  <input type="text" name="task" id="task" class="task_input">
+  <select id="day">
+    <option value="0">Sunday</option>
+    <option value="1">Monday</option>
+    <option value="2">Tuesday</option>
+    <option value="3">Wednesday</option>
+    <option value="4">Thursday</option>
+    <option value="5">Friday</option>
+    <option value="6">Saturday</option>
+  </select>
+  <button type="submit" class="task_btn" name="submit">Add Recipe</button>
+
+</form>
+
+<div>
+  <table id="t01">
+    <tr>
+      <th>Sunday</th>
+      <th>Monday</th>
+      <th>Tuesday</th>
+      <th>Wednesday</th>
+      <th>Thursday</th>
+      <th>Friday</th>
+      <th>Saturday</th>
+    </tr>
+    <tr>
+      <td></td>
+      <td></td>
+      <td></td>
+      <td></td>
+      <td></td>
+      <td></td>
+      <td></td>
+    </tr>
+  </table>
+</div>
+
+</body>
+	
+<script src="weeklyCalendarRepJS.js"> </script>
+</html>

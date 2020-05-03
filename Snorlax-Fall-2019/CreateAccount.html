@@ -1,0 +1,45 @@
+<!DOCTYPE html>
+<html>
+	<head>
+		<title>Create an account</title>
+		<link rel="stylesheet" type="text/css" href="CreateAccountStyle.css">
+	</head>
+	<body>
+		<h1>MealPrep</h1>
+		</br>
+		<div class="container">
+			<h2>Putting a PREP in your step for better MEALS!<h3>
+ 		</div>
+		</br>
+			
+		<div id="createAccount">
+			<h3><a>Create an account:</a></h3>
+			<a>First name:</a><br>
+			<input type="text" id="firstname"><br>
+			<a>Last name:</a><br>
+			<input type="text" id="lastname"><br>
+			<a>E-mail:</a><br>
+			<input type="text" id="email"><br>
+			<a>Password:</a><br>
+			<input type="password" id="password1"><br>
+			<a>Confirm-Password:</a><br>
+			<input type="password" id="password2"><br><br>
+			<button type="button" onclick="checkPassword()"><a>Submit</a></button>
+		</div>
+		
+		<script>
+		function checkPassword() {
+			var pass1, pass2;
+			
+			pass1 = document.getElementById("password1").value;
+			pass2 = document.getElementById("password2").value;
+			
+			if(pass1 == pass2) {
+				alert("Success");
+			} else {
+				alert("The passwords did not match");
+			}
+		}
+		</script>
+	</body>
+</html>

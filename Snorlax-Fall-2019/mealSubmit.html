@@ -1,0 +1,35 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <link rel="stylesheet" href="styles.css">
+    <link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/4.3.1/css/bootstrap.min.css" integrity="sha384-ggOyR0iXCbMQv3Xipma34MD+dH/1fQ784/j6cY/iJTQUOhcWr7x9JvoRxT2MZw1T" crossorigin="anonymous">
+
+    <title>MealPrep by Snorlax</title>
+</head>
+<body>
+<h1>
+    <center>Lets Submit a Meal!</center>
+</h1>
+
+<nav class=navbar navbar-nav>
+    <ul class=nav nav-pills>
+        <li><a href="mealplan.html">Home</a></li>
+        <li><a href= "Pantry.php">Pantry</a></li>
+        <li><a href= "Cookbook.php">Cookbook</a></li>
+    </ul>
+</nav>
+
+<form method="get" action="mealSubmit.php">
+    Meal: <label>
+    <input type="text" name="meal">
+</label>
+    <br><br>
+    Number of Ingredients: <label>
+    <input type="text" name="number">
+</label>
+    <br><br>
+    <input type="submit" value="Submit">
+</form>
+
+</body>
+</html>
