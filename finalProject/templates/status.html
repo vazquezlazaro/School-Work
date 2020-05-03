@@ -1,0 +1,63 @@
+{% extends "base.html" %}
+{% block extrajs %}
+<!-- You should place your js files here -->
+<style>
+table {
+  border-collapse: collapse;
+  border-spacing: 0;
+  width: 100%;
+  border: 1px solid #ddd;
+}
+
+th, td {
+  text-align: left;
+  padding: 16px;
+}
+
+tr:nth-child(even) {
+  background-color: #f2f2f2;
+}
+</style>
+{% endblock%}
+
+{% block title %}Request Status{% endblock %}
+{% block nav_status %}class="active"{% endblock %}
+{% block content %}
+
+     
+      <div class="container">
+      <h2>My Pickups</h2>
+        <table>
+         <tr>
+            <th>Order Number</th>
+            <th>Store</th>
+            <th>Status</th>
+        </tr>
+        {% for stat in status %}
+        <tr>
+            <td>{{stat.order}} </td>
+            <td>{{stat.store}}</td>
+            <td>{{stat.pickup_status}}</td>
+        </tr>
+        {% endfor %}
+        </table>
+
+
+    </div>
+
+    <div class="container">
+        <h2>Delivery Report</h2>
+        <table>
+         <tr>
+            <th>Pickup Request Completed</th>
+            <th>Cash Earned</th>
+        </tr>
+        <tr>
+            <td>{{ completed }}</td>
+            <td>$ {{ payment * completed }}</td>
+        </tr>
+
+        </table>
+    </div>
+  
+{% endblock %}

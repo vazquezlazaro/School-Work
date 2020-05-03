@@ -1,0 +1,68 @@
+{% extends "base.html" %}
+{% block extrajs %}
+<!-- You should place your js files here -->
+<style>
+table {
+  border-collapse: collapse;
+  border-spacing: 0;
+  width: 100%;
+  border: 1px solid #ddd;
+}
+
+th, td {
+  text-align: left;
+  padding: 16px;
+}
+
+tr:nth-child(even) {
+  background-color: #f2f2f2;
+}
+</style>
+
+<script src="/static/js/accept_page.js"></script>
+
+{% endblock%}
+
+{% block title %}Accept a Pickup{% endblock %}
+ {% block nav_accept %} class="active" {% endblock %}
+{% block content %}
+
+    <div class="row" style="margin-top:50px">
+    <div class="col-6 col-sm-6" align="center">
+         <img src="static/src/money.jpg"  width="200" height="200"/>
+    </div>
+
+     <div class="col-6 col-sd-6">
+         <p>Want to pick up someones order for them? Select which order </p>
+         <p>you want to pick up and deliver for some quick cash! </p>
+     </div>
+    </div>
+
+<br>
+
+    <div class="container">
+        <table>
+  <tr>
+    <th>Store Name</th>
+    <th>Pickup Time</th>
+  </tr>
+  {% for pick in pickups %}
+  <tr>
+    <td> {{pick.store}} </td>
+    <td> {{pick.status}} </td>
+  </tr>
+  {% endfor %}
+
+  
+</table>
+    </div>
+<center>
+   <button type="button" id="display_button">Display all Pickups in the select list</button>
+    <button type="button" id="select_buttom">Accept this Pickup</button>
+     <div class="form-group">
+    <label for="sel1">Select list:</label>
+    <select class="form-control" id="sel1"> </select>
+  </div> 
+ </center>
+
+{% endblock %}
