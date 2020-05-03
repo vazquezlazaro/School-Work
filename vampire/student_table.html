@@ -1,0 +1,134 @@
+<!doctype html>
+<html>
+
+<head>
+  <meta charset="UTF-8">
+  <title>student_Table</title>
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/3.4.0/css/bootstrap.min.css">
+  <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.3.1/jquery.min.js"></script>
+  <script src="https://maxcdn.bootstrapcdn.com/bootstrap/3.4.0/js/bootstrap.min.js"></script>
+  <script type="text/javascript" src="https://www.gstatic.com/charts/loader.js"></script>
+	<script type="text/javascript" src="classmateData.json"></script> 
+  <script type="text/javascript" src="vampire.js"></script> 
+	
+	<link rel="stylesheet" href="style.css">
+  <script>
+   
+
+    function show_threshold(){
+      update_classmate();
+      window.location.href = "threshold.html"
+    }
+
+    function show_random(){
+      update_classmate();
+      window.location.href = "random.html"
+    }
+
+    function model_select() {
+      if (document.getElementById("mySelect").selectedIndex == 1) {
+        show_random();
+        console.log('Random Model Logic Completed');
+      } else if (document.getElementById("mySelect").selectedIndex == 2) {
+        show_threshold();
+        console.log('Threshold Model Logic Completed');
+      }
+    }
+
+    function update_classmate() {
+      sessionStorage.setItem("classmate_data", JSON.stringify(classmate_data));
+    }
+  </script>
+</head>
+
+<body>
+  <h2><center>Is Your Classmate a Vampire?</center></h2>
+  <br>
+  <div class="container">
+    <table class="table table-bordered" id="student_table">
+      <caption>Classmate Roster</caption>
+      <thead>
+        <tr>
+          <th>Name</th>
+          <th>Shadow</th>
+          <th>Galic</th>
+          <th>Complexion</th>
+        </tr>
+      </thead>
+      <tbody>
+      </tbody>
+
+    </table>
+    <script>create_table();</script>
+    <button class="btn btn-primary" onclick="delete_row()">Delete the first entry</button>
+    <button class="btn btn-primary" onclick="delete_last_row()">Delete the last entry</button>
+  </div>
+  <div class="container">
+    <h2>Form control: input</h2>
+    <form>
+      <div class="form-row">
+        <!-- md is short for Medium, >= 768 px -->
+        <div class="form-group col-md-6">
+          <label for="first_name">First Name</label>
+          <!-- possible types:  text, password, datetime, datetime-local, date, month, time, week, number, email, url, search, tel, and color. -->
+          <input type="text" class="form-control" id="first_name" placeholder="First Name">
+
+        </div>
+
+        <div class="form-group col-md-6">
+          <label for="last_name">Last Name</label>
+          <input type="text" class="form-control" id="last_name" placeholder="Last Name">
+        </div>
+      </div>
+
+      <div class="form-row">
+        <!-- without this, your rows will not be aligned -->
+        <div class="form-group col-md-12">
+          <div class="checkbox">
+            <label><input type="checkbox" id="galic_checkbox">Galic</label>
+          </div>
+          <div class="checkbox">
+            <label><input type="checkbox" id="shadow_checkbox">Shadow</label>
+          </div>
+        </div>
+      </div>
+
+      <div class="form-row">
+        <div class="form-group col-md-12">
+          <label for="last_name">Complexion</label>
+          <input type="text" class="form-control" id="Complexion" placeholder="Complexion">
+        </div>
+      </div>
+    </form>
+    <br>
+    <button class="btn btn-primary" onclick="insert_row()">Submit</button>
+
+    <p id="user_info"></p>
+  </div>
+  <div class="container">
+    <h2>Controller: Select data processing methods</h2>
+
+    <div class="form-group">
+      <label for="mySelect">Select Model Logic:</label>
+      <select class="form-control" id="mySelect">
+        <option value="0"></option>
+        <option value='1'>Random Guess</option>
+        <option value='2'>Threshold Based Method</option>
+      </select>
+
+
+
+      <!-- write a function to display chosen option with a pop up window. -->
+      <br>
+      <button class="btn btn-primary" onclick="model_select()">Select logic Model</button>
+
+      <button class="btn btn-primary" onclick="document.getElementById('mySelect').selectedIndex = '0'">Deselect all
+        options.</button>
+    </div>
+  </div>
+ 
+</body>
+
+</html>
